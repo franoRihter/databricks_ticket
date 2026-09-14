@@ -6,7 +6,7 @@ env:
   - name: PGDATABASE
     value: 'databricks_postgres'
   - name: PGUSER
-    value: '<DATABRICKS_CLIENT_ID>'          # app's Environment tab, after creation
+    value: '165adb1d-51e4-4644-a03f-1aedb627b206'          # app's Environment tab, after creation
   - name: PGPORT
     value: '5432'
   - name: PGSSLMODE
