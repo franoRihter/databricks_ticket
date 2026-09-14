@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lakebase Form App</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 16px; }
+    input, textarea { width: 100%; padding: 8px; margin: 6px 0 14px; box-sizing: border-box; }
+    button { padding: 8px 16px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+    th, td { text-align: left; padding: 6px 4px; border-bottom: 1px solid #ddd; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>Submit to Lakebase</h1>
+
+  <form action="{{ url_for('submit') }}" method="post">
+    <label for="name">Name</label>
+    <input id="name" name="name" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="3" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <h2>Recent submissions</h2>
+  <table>
+    <tr><th>ID</th><th>Name</th><th>Message</th><th>Created</th></tr>
+    {% for row in rows %}
+    <tr>
+      <td>{{ row[0] }}</td>
+      <td>{{ row[1] }}</td>
+      <td>{{ row[2] }}</td>
+      <td>{{ row[3] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
